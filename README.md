@@ -1,22 +1,20 @@
 
-# The Probability Density Function (PDF) - Lab
+# The Probability Density Function - Lab
 
 ## Introduction
-
-In this lab we will look at building visualizations known as **density plots** to estimate the probability density for a given set of data. 
+In this lab, we will look at building visualizations known as **density plots** to estimate the probability density for a given set of data. 
 
 ## Objectives
 
-You will be able to: 
+You will be able to:
 
-* Calculate the PDF from given dataset containing real valued random variables
+* Calculate the PDF from a given dataset containing real-valued random variables
 * Plot density functions and comment on the shape of the plot
 * Plot density functions using seaborn
 
+## Let's get started
 
-## Let's get started!
-
-We'll import all the required libraries for you for this lab.
+Let's import the necessary libraries for this lab.
 
 
 ```python
@@ -27,17 +25,19 @@ plt.style.use('ggplot')
 import pandas as pd 
 ```
 
-#### Import the dataset 'weight-height.csv' as pandas dataframe . Calculate the mean and standard deviation for weights and heights for male and female individually. 
+## Import the data, and calculate the mean and the standard deviation
 
-Hint : Use your pandas dataframe subsetting skills like loc(), iloc() and groupby()
+- Import the dataset 'weight-height.csv' as a pandas dataframe.
+
+- Next, calculate the mean and standard deviation for weights and heights for men and women individually. You can simply use the pandas `.mean()` and `.std()` to do so.
+
+**Hint**: Use your pandas dataframe subsetting skills like loc(), iloc() and groupby()
 
 
 ```python
 data = None
 male_df =  None
 female_df =  None
-
-  
 
 # Male Height mean: 69.02634590621737
 # Male Height sd: 2.8633622286606517
@@ -59,39 +59,38 @@ female_df =  None
     Female Weight sd: 19.022467805319007
 
 
-#### Plot overlapping normalized histograms for male and female heights - use binsize = 10, set alpha level so that overlap can be visualized
+## Plot histograms (with densities on the y-axis) for male and female heights 
+
+- Make sure to create overlapping plots
+- use binsize = 10, set alpha level so that overlap can be visualized
 
 
 ```python
-
+# Your code here
 ```
 
 
-
-
-    <matplotlib.legend.Legend at 0x10a5a38d0>
-
-
-
-
-![png](index_files/index_5_1.png)
+![png](index_files/index_5_0.png)
 
 
 
 ```python
 # Record your observations - are these inline with your personal observations?
 
-
 ```
 
-#### Write a function density() that takes in a random variable and calculates the density function using `np.hist` and interpolation. The function should return two lists carrying x and y coordinates for plotting the density function
+## Create a density function using interpolation
+
+
+- Write a densit function density() that uses interpolation and takes in a random variable
+- Use`np.hist`
+- The function should return two lists carrying x and y coordinates for plotting the density function
 
 
 ```python
 def density(x):
     
     pass
-
 
 
 # Generate test data and test the function - uncomment to run the test
@@ -104,22 +103,10 @@ def density(x):
 ```
 
 
-```python
-
-```
+![png](index_files/index_8_0.png)
 
 
-
-
-    <matplotlib.legend.Legend at 0x10acba668>
-
-
-
-
-![png](index_files/index_9_1.png)
-
-
-#### Add Overlapping density plots for male and female heights to the histograms plotted earlier
+## Add Overlapping density plots to the histograms plotted earlier
 
 
 ```python
@@ -127,22 +114,10 @@ def density(x):
 ```
 
 
-```python
-
-```
+![png](index_files/index_10_0.png)
 
 
-
-
-    [<matplotlib.lines.Line2D at 0x10e25c9b0>]
-
-
-
-
-![png](index_files/index_12_1.png)
-
-
-#### Repeat above exerice for male and female weights
+## Repeat above exerice for male and female weights
 
 
 ```python
@@ -150,73 +125,45 @@ def density(x):
 ```
 
 
-```python
-
-```
+![png](index_files/index_12_0.png)
 
 
-
-
-    [<matplotlib.lines.Line2D at 0x115c5fa90>]
-
-
-
-
-![png](index_files/index_15_1.png)
-
-
-#### Write your observations in the cell below.
+## Write your observations in the cell below
 
 
 ```python
 # Record your observations - are these inline with your personal observations?
 
 
-# So whats the takeaway when comparing male and female heights and weights 
-
-
+# What is the takeaway when comparing male and female heights and weights?
 ```
 
-#### Repeat Above experiments in seaborn and compare with your results. 
+## Repeat Above experiments in seaborn and compare with your results
 
 
 ```python
-
+# Code for heights here
 ```
 
 
-
-
-    Text(0.5,1,'Comparing weights')
-
-
-
-
-![png](index_files/index_19_1.png)
+![png](index_files/index_16_0.png)
 
 
 
 ```python
-
+# Code for weights here
 ```
 
 
-
-
-    Text(0.5,1,'Comparing Weights')
-
-
-
-
-![png](index_files/index_20_1.png)
+![png](index_files/index_17_0.png)
 
 
 
 ```python
 # Your comments on the two approaches here. 
-# are they similar ? what makes them different if they are ?
+# are they similar? what makes them different if they are?
 ```
 
 ## Summary
 
-In this lesson we saw how to build the probability density curves visually for given datasets and compare on the distribution visually by looking at the spread , center and overlap between data elements. This is a useful EDA technique and can be used to answer some initial questions before embarking on a complex analytics journey.
+In this lesson you learned how to build the probability density curves visually for a given datasets, and compare the distributions visually by looking at the spread, center and overlap. This is a useful EDA technique and can be used to answer some initial questions before embarking on a complex analytics journey.
